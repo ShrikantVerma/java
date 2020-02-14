@@ -1,0 +1,105 @@
+﻿########Declarative pipeline scripts
+
+pipeline {
+    agent any
+
+    stages {
+        stage('Build') {
+            steps {
+                echo 'Building...'
+            }
+        }
+        stage('Test') {
+            steps {
+                echo 'Testing...'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo 'Deploying...'
+            }
+        }
+    }
+}
+
+##########################################
+
+Add options { skipDefaultCheckout() } to the agent.
+#####################
+
+pipeline {
+    agent any
+    
+    options { skipDefaultCheckout() }
+    
+    stages {
+        stage('Build') {
+            steps {
+                echo 'Building...'
+            }
+        }
+        stage('Test') {
+            steps {
+                echo 'Testing...'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo 'Deploying...'
+            }
+        }
+    }
+}
+
+##########################################
+
+Jenkinsfile (Declarative Pipeline) single stage
+
+######################################### 
+pipeline {
+    agent any 
+    stages {
+        stage('Stage 1') {
+            steps {
+                echo 'Hello world!' 
+            }
+        }
+    }
+}
+
+##################################################
+
+pipeline {
+    agent any 
+
+    stages {
+        stage('Build Assets') {
+            agent any 
+            steps {
+                echo 'Building Assets...'
+            }
+        }
+        stage('Test') {
+            agent any
+            steps {
+                echo 'Testing stuff...'
+            }
+        }
+    }
+}
+
+####################################################
+https://github.com/kriru/firstJava.git
+https://github.com/ShrikantVerma/java
+
+Description   Hello world java test program
+
+javac HelloWorld.java
+java  HelloWorld
+
+########################################
+
+
+
+
+
